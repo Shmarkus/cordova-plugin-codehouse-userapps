@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-codehouse-userapps",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "cordova": {
     "id": "cordova-plugin-codehouse-userapps",
@@ -8,9 +8,18 @@
       "android" 
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shmarkus/cordova-plugin-codehouse-userapps.git"
+  },
   "keywords": [
     "ecosystem:cordova",
     "cordova-android"
   ],
-  "author": ""
+  "author": "Markus Karileet",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/Shmarkus/cordova-plugin-codehouse-userapps/issues"
+  },
+  "homepage": "https://github.com/Shmarkus/cordova-plugin-codehouse-userapps#readme"
 }
