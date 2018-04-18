@@ -24,13 +24,16 @@ public class UserApps extends CordovaPlugin {
     }
 
     private void getUserApps(CallbackContext callbackContext) {
-        HashMap<String, String> apps = new HashMap<>();
+        ArrayList<JSONObject> apps = new ArrayList();
         try {
             Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
             mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
             PackageManager packageManager = this.cordova.getActivity().getApplication().getPackageManager();
             for (ResolveInfo app: packageManager.queryIntentActivities( mainIntent, 0)) {
-                apps.put(app.activityInfo.processName, app.loadLabel(packageManager).toString());
+                HashMap<String, String> entry = new HashMap<>();
+                entry.put("package", app.activityInfo.processName);
+                entry.put("label", app.loadLabel(packageManager).toString());
+                apps.add(new JSONObject(entry));
             }
 
             callbackContext.success(new JSONArray(apps));
